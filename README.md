@@ -31,6 +31,6 @@ The project is simple to run. You just need to fork the repo and then clone it. 
 
 ## Submitting the project-:
 
-The submissions starts at 12AM 23rd February 2019. The submission time only last for an hour and the deadline is 10 AM 23rd February 2019.  **Those projects will be disqualified which have commits after 12AM 23rd Febraury 2019** .To submit -:
+The submissions starts at 12AM 23rd February 2019. The submission has deadline of 10 AM 23rd February 2019.  **Those projects will be disqualified which have commits after 12AM 23rd Febraury 2019** .To submit -:
 > Make a Pull Request from your fork on the main repo.
 
