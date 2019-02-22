@@ -7,15 +7,17 @@
         <link rel="stylesheet" href="normalize.css">
         <link rel="stylesheet" href="icomoon.css">
         <link rel="stylesheet" href="style.css" content-type="text/css">
-        <!--Only for testing  <link href="https://unpkg.com/mocha@4.0.1/mocha.css" rel="stylesheet" /> -->
+        <link href="https://unpkg.com/mocha@4.0.1/mocha.css" rel="stylesheet" />
 
     </head>
     <body class="menu-hidden">
-        <div id='mocha'></div>
         <div class="header">
-            <a href="#" class="menu-icon-link">
-                <i class="icon-list"></i>
-            </a>
+            <div class="menuicon">
+                <!-- <a href="#" class="menu-icon-link"> -->
+                        <!-- <i class="icon-list"></i> -->
+                        <img src="menuicon1.svg" alt="menuicon" class="menuiconimg">
+                    <!-- </a> -->
+            </div>
             <div class="text-center">
             <h1 class="header-title" aria-describedby="The heading of the present feed">Feeds</h1>
             </div>
@@ -24,9 +26,12 @@
         <div class="slide-menu">
             <ul class="feed-list"></ul>
         </div>
-
+        <!-- <div class="feed0" data-id="0" id="0"></div>
+        <div class="feed1" data-id="1" id="1"></div>
+        <div class="feed2" data-id="2" id="2"></div> -->
+        <div id='mocha'></div>
         <div class="feed">
-            <a class="entry-link" href="https://css-tricks.com/the-magic-of-react-based-multi-step-forms/">
+                <a class="entry-link" href="https://css-tricks.com/the-magic-of-react-based-multi-step-forms/">
                 <article class="entry">
                     <h2>The Magic of React-Based Multi-Step Forms</h2>
                     <p>Nathan Sebhastian</p> 
@@ -103,17 +108,26 @@
             </li>
         </script>
 
+        <script class="tpl-feed-item" type="text/x-handlebars-template">
+            <a class="entry-link" href="{{link}}">
+                <article class="entry">
+                    <h2>{{title}}</h2>
+                    <p>{{author}}</p> 
+                </article>
+            </a>
+        </script>
+
         <script src="https://cdn.rawgit.com/jquery/jquery/2.1.4/dist/jquery.min.js"></script>
         <script src="http://cdn.jsdelivr.net/handlebarsjs/2.0.0/handlebars.min.js"></script>
         <script src="app.js"></script>
-        <!-- Only for testing <script src="https://unpkg.com/chai@4.1.2/chai.js"></script>
+        <script src="https://unpkg.com/chai@4.1.2/chai.js"></script>
         <script src="https://unpkg.com/mocha@4.0.1/mocha.js"></script>
         <script>mocha.setup('bdd')</script>
         <script src="feedreader.js"></script>
         <script>
-            mocha.checkLeaks();
+            mocha.setup({ignoreLeaks: true});
             mocha.run();
-        </script> -->
+        </script>
 
     </body>
 </html>

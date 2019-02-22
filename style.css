@@ -8,9 +8,9 @@ html {
     box-sizing: border-box;
 }
 
-.text-center{
+/* .text-center{
     text-align: center;
-}
+} */
 body {
     color: #111;
     font-family: 'Roboto', sans-serif;
@@ -44,7 +44,8 @@ h2 {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 0.5em 1em;
+    height:10vh;
+    /* padding: 0.5em 1em; */
 }
 
 .icon-list {
@@ -53,8 +54,8 @@ h2 {
 }
 
 .slide-menu {
-    position: absolute;
-    top: 3.5em;
+    position: fixed;
+    top: 10vh;
     padding: 1em;
     background: #0984b4;
     height: 100%;
@@ -74,7 +75,8 @@ h2 {
 }
 
 #mocha{
-    display: none;
+    text-align: center;
+    border-bottom: 2px dotted black;
 }
 .slide-menu li a {
     color: #fff;
@@ -89,10 +91,49 @@ h2 {
 
 .feed {
     margin: 4em 0 0;
+    margin-top: 10vh;
 }
 
 .entry {
     border-bottom: 1px solid #ddd;
     padding: 1em;
     margin: 0.5em 0;
+}
+
+/* My Changes */
+
+/* align text of class entry to centre */
+
+.entry h2,.entry p{
+    text-align: center;
+}
+
+.menuicon{
+    width:10%;
+    height: 100%;
+    float: left;
+}
+
+/* .menuicon a{
+    display: block;
+    width: 100%;
+    height: 100%;
+} */
+
+.menuicon img{
+    /* display: block; */
+    width:100%;
+    height: 65%;
+    margin: 0 auto;
+    padding-top:5%;
+}
+
+.text-center{
+    height: 100%;
+    float: right;
+    width:90%;
+}
+.text-center h1{
+    margin-left:43%;
+    padding-top: 5px;
 }
