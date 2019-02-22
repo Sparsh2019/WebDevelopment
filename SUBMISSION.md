@@ -24,4 +24,4 @@ Other simpler effects provided by CSS are alignment and margin setting to increa
 -. CSS alignment changes.
 -. The separate html file helps to align the slide bar and separate its effect from header which was interconnected initially.
 -. This enables them function independently.
-
+-. Provided surge deployed link in PR..
