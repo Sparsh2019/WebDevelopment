@@ -63,4 +63,17 @@ $(function () {
   /* When the menu icon is clicked on, we need to toggle a class
    * on the body to perform the hiding/showing of our menu.
    */
+
+   $(document).ready(function(){
+     $("a.menu-icon-link").click(function(){
+       $(".slide-menu").toggleClass('menu-hidden');
+     });
+     /*on scroll slide menu back in*/
+     $(".feed").scroll(function(){
+         $(".slide-menu").addClass("menu-hidden");
+    });
+   });
+
+
+
 }());
