@@ -1,112 +1,148 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>YourFeeds</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>YourFeeds</title>
 
-        <link rel="stylesheet" href="normalize.css">
-        <link rel="stylesheet" href="icomoon.css">
-        <link rel="stylesheet" href="style.css" content-type="text/css">
-        <!--Only for testing  <link href="https://unpkg.com/mocha@4.0.1/mocha.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="icomoon.css" />
+    <link rel="stylesheet" href="style.css" content-type="text/css" />
+    <!--Only for testing  <link href="https://unpkg.com/mocha@4.0.1/mocha.css" rel="stylesheet" /> -->
+  </head>
+  <body class="menu-hidden">
+    <div id="mocha"></div>
+    <div class="header">
+      <a href="#" class="menu-icon-link">
+        <i class="icon-menu"></i>
+      </a>
+      <div class="text-center">
+        <h1
+          class="header-title"
+          aria-describedby="The heading of the present feed"
+        >
+          Feeds
+        </h1>
+      </div>
+    </div>
 
-    </head>
-    <body class="menu-hidden">
-        <div id='mocha'></div>
-        <div class="header">
-            <a href="#" class="menu-icon-link">
-                <i class="icon-list"></i>
-            </a>
-            <div class="text-center">
-            <h1 class="header-title" aria-describedby="The heading of the present feed">Feeds</h1>
-            </div>
-        </div>
+    <div class="slide-menu">
+      <ul class="feed-list"></ul>
+    </div>
 
-        <div class="slide-menu">
-            <ul class="feed-list"></ul>
-        </div>
+    <div class="feed">
+      <a
+        class="entry-link"
+        href="https://css-tricks.com/the-magic-of-react-based-multi-step-forms/"
+      >
+        <article class="entry">
+          <h2>The Magic of React-Based Multi-Step Forms</h2>
+          <p>Nathan Sebhastian</p>
+        </article>
+      </a>
 
-        <div class="feed">
-            <a class="entry-link" href="https://css-tricks.com/the-magic-of-react-based-multi-step-forms/">
-                <article class="entry">
-                    <h2>The Magic of React-Based Multi-Step Forms</h2>
-                    <p>Nathan Sebhastian</p> 
-                </article>
-            </a>
-        
-            <a class="entry-link" href="https://medium.com/@sachagreif/announcing-the-state-of-css-2019-survey-e1e4268df64d">
-                <article class="entry">
-                    <h2>The #StateOfCSS 2019 Survey</h2>
-                    <p>Geoff Graham</p> 
-                </article>
-            </a>
-        
-            <a class="entry-link" href="https://css-tricks.com/getting-to-grips-with-the-airtable-api/">
-                <article class="entry">
-                    <h2>Getting to Grips with the Airtable API</h2>
-                    <p>Robin Rendle</p> 
-                </article>
-            </a>
-        
-            <a class="entry-link" href="https://synd.co/2GemPNV">
-                <article class="entry">
-                    <h2>Use monday.com to manage and share projects all in one place</h2>
-                    <p>Geoff Graham</p> 
-                </article>
-            </a>
-        
-            <a class="entry-link" href="https://css-tricks.com/the-smart-ways-to-correct-mistakes-in-git/">
-                <article class="entry">
-                    <h2>The Smart Ways to Correct Mistakes in Git</h2>
-                    <p>Tobias Günther</p> 
-                </article>
-            </a>
-        
-            <a class="entry-link" href="https://cloudinary.com/blog/a_chaotic_good_guide_to_image_performance_part_1">
-                <article class="entry">
-                    <h2>“the closest thing web standards have to a golden rule”</h2>
-                    <p>Chris Coyier</p> 
-                </article>
-            </a>
-        
-            <a class="entry-link" href="https://css-tricks.com/%e2%80%8b%e2%80%8bavoiding-those-dang-cannot-read-property-of-undefined-errors/">
-                <article class="entry">
-                    <h2>​​Avoiding those dang cannot read property of undefined errors</h2>
-                    <p>Adam Giese</p> 
-                </article>
-            </a>
-        
-            <a class="entry-link" href="https://css-tricks.com/a-site-for-front-end-development-conferences-built-with-11ty-on-netlify/">
-                <article class="entry">
-                    <h2>A Site for Front-End Development Conferences (Built with 11ty on Netlify)</h2>
-                    <p>Chris Coyier</p> 
-                </article>
-            </a>
-        
-            <a class="entry-link" href="https://css-tricks.com/quick-whats-the-difference-between-flexbox-and-grid/">
-                <article class="entry">
-                    <h2>Quick! What’s the Difference Between Flexbox and Grid?</h2>
-                    <p>Chris Coyier</p> 
-                </article>
-            </a>
-        
-            <a class="entry-link" href="https://css-tricks.com/a-funny-thing-happened-on-the-way-to-the-javascript/">
-                <article class="entry">
-                    <h2>A Funny Thing Happened on the Way to the JavaScript</h2>
-                    <p>Jason Rodriguez</p> 
-                </article>
-            </a>
-        </div>
+      <a
+        class="entry-link"
+        href="https://medium.com/@sachagreif/announcing-the-state-of-css-2019-survey-e1e4268df64d"
+      >
+        <article class="entry">
+          <h2>The #StateOfCSS 2019 Survey</h2>
+          <p>Geoff Graham</p>
+        </article>
+      </a>
 
-        <script class="tpl-feed-list-item" type="text/x-handlebars-template">
-            <li>
-                <a href="#" data-id="{{id}}">{{name}}</a>
-            </li>
-        </script>
+      <a
+        class="entry-link"
+        href="https://css-tricks.com/getting-to-grips-with-the-airtable-api/"
+      >
+        <article class="entry">
+          <h2>Getting to Grips with the Airtable API</h2>
+          <p>Robin Rendle</p>
+        </article>
+      </a>
 
-        <script src="https://cdn.rawgit.com/jquery/jquery/2.1.4/dist/jquery.min.js"></script>
-        <script src="http://cdn.jsdelivr.net/handlebarsjs/2.0.0/handlebars.min.js"></script>
-        <script src="app.js"></script>
-        <!-- Only for testing <script src="https://unpkg.com/chai@4.1.2/chai.js"></script>
+      <a class="entry-link" href="https://synd.co/2GemPNV">
+        <article class="entry">
+          <h2>Use monday.com to manage and share projects all in one place</h2>
+          <p>Geoff Graham</p>
+        </article>
+      </a>
+
+      <a
+        class="entry-link"
+        href="https://css-tricks.com/the-smart-ways-to-correct-mistakes-in-git/"
+      >
+        <article class="entry">
+          <h2>The Smart Ways to Correct Mistakes in Git</h2>
+          <p>Tobias Günther</p>
+        </article>
+      </a>
+
+      <a
+        class="entry-link"
+        href="https://cloudinary.com/blog/a_chaotic_good_guide_to_image_performance_part_1"
+      >
+        <article class="entry">
+          <h2>“the closest thing web standards have to a golden rule”</h2>
+          <p>Chris Coyier</p>
+        </article>
+      </a>
+
+      <a
+        class="entry-link"
+        href="https://css-tricks.com/%e2%80%8b%e2%80%8bavoiding-those-dang-cannot-read-property-of-undefined-errors/"
+      >
+        <article class="entry">
+          <h2>
+            ​​Avoiding those dang cannot read property of undefined errors
+          </h2>
+          <p>Adam Giese</p>
+        </article>
+      </a>
+
+      <a
+        class="entry-link"
+        href="https://css-tricks.com/a-site-for-front-end-development-conferences-built-with-11ty-on-netlify/"
+      >
+        <article class="entry">
+          <h2>
+            A Site for Front-End Development Conferences (Built with 11ty on
+            Netlify)
+          </h2>
+          <p>Chris Coyier</p>
+        </article>
+      </a>
+
+      <a
+        class="entry-link"
+        href="https://css-tricks.com/quick-whats-the-difference-between-flexbox-and-grid/"
+      >
+        <article class="entry">
+          <h2>Quick! What’s the Difference Between Flexbox and Grid?</h2>
+          <p>Chris Coyier</p>
+        </article>
+      </a>
+
+      <a
+        class="entry-link"
+        href="https://css-tricks.com/a-funny-thing-happened-on-the-way-to-the-javascript/"
+      >
+        <article class="entry">
+          <h2>A Funny Thing Happened on the Way to the JavaScript</h2>
+          <p>Jason Rodriguez</p>
+        </article>
+      </a>
+    </div>
+
+    <script class="tpl-feed-list-item" type="text/x-handlebars-template">
+      <li>
+          <a href="{{url}}" data-id="{{id}}">{{name}}</a>
+      </li>
+    </script>
+
+    <script src="https://cdn.rawgit.com/jquery/jquery/2.1.4/dist/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/handlebarsjs/2.0.0/handlebars.min.js"></script>
+    <script src="app.js"></script>
+    <!-- Only for testing <script src="https://unpkg.com/chai@4.1.2/chai.js"></script>
         <script src="https://unpkg.com/mocha@4.0.1/mocha.js"></script>
         <script>mocha.setup('bdd')</script>
         <script src="feedreader.js"></script>
@@ -114,6 +150,5 @@
             mocha.checkLeaks();
             mocha.run();
         </script> -->
-
-    </body>
+  </body>
 </html>
