@@ -1,4 +1,5 @@
-var allFeeds = [{
+var allFeeds = [
+  {
   name: 'CSS Tricks',
   url: 'http://feeds.feedburner.com/CssTricks'
 }, {
@@ -7,7 +8,19 @@ var allFeeds = [{
 }, {
   name: 'Linear Digressions',
   url: 'http://feeds.feedburner.com/udacity-linear-digressions'
-}];
+}
+];
+var j=0;
+var k=0;
+var count_name=[];
+var count_url=[];
+for(i = 0; i < allFeeds.length; i++)
+{
+  count_name[j]=allFeeds[i].name;
+  j=j+1;
+  count_url[k]=allFeeds[i].url;
+  k=k+1;
+};
 
 function init() {
   loadFeed(0);
@@ -29,7 +42,7 @@ function loadFeed(id, cb) {
     },
     success: function (result, status) {
       if (cb) {
-        cb( /*something*/ );
+        cb(result);
       }
     },
     error: function (result, status, err) {
@@ -55,7 +68,7 @@ $(function () {
 
   feedList.on('click', function () {
     var item = $(this);
-    $('body').addClass( /*A class here*/ );
+    $('body').addClass(menu-hidden);
     loadFeed(item.data('id'));
     return false;
   });

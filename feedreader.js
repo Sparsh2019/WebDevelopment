@@ -30,13 +30,16 @@ $(function () {
 
     // This test checks whether all the url field are defined and are not empty.
     it('should have defined Urls', function () {
-      // Test here
-
+      let expect = chai.expect;
+      expect(count_url).to.be.undefined;
+      expect(count_url.length).to.equal(3);
     });
 
     // This test check whether all the feed names are defined and are not empty.
     it('should have defined names', function () {
-      // Test here
+      let expect = chai.expect;
+      expect(count_name).to.be.undefined;
+      expect(count_name.length).to.equal(3);
 
     });
   });
