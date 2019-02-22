@@ -28,8 +28,11 @@ function loadFeed(id, cb) {
       rss_url: 'http://feeds.feedburner.com/CssTricks'
     },
     success: function (result, status) {
-      if (cb) {
-        cb( /*something*/ );
+      if(status == "success"){
+        var feedData = result.items;
+        $.each(feedData,function(index,feedData){
+          $('.feed').append('<a class="entry-link" href=' + feedData.link + '> <article class="entry"><h2>' + feedData.title +'</h2><p>'+ feedData.author +'</p></article></a>');
+        });
       }
     },
     error: function (result, status, err) {
