@@ -28,14 +28,18 @@ function loadFeed(id, cb) {
       rss_url: 'http://feeds.feedburner.com/CssTricks'
     },
     success: function (result, status) {
-      if (cb) {
-        cb( /*something*/ );
+      if(status == "success"){
+        var feedData = result.items;
+        $.each(feedData,function(index,feedData){
+          $('.feed').append('<a class="entry-link" href=' + feedData.link + '> <article class="entry"><h2>' + feedData.title +'</h2><p>'+ feedData.author +'</p></article></a>');
+        });
       }
     },
     error: function (result, status, err) {
       //run only the callback without attempting to parse result due to error
-      if (cb) {
-        cb();
+      if (status) {
+        console.log(err);
+        $('.feed').append('<center>Something Went Wrong<center/>');
       }
     },
     dataType: "json"
@@ -55,7 +59,7 @@ $(function () {
 
   feedList.on('click', function () {
     var item = $(this);
-    $('body').addClass( /*A class here*/ );
+    $('body').addClass('.feed');
     loadFeed(item.data('id'));
     return false;
   });
