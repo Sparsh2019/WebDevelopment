@@ -68,6 +68,11 @@ $(function () {
 
     // Test to check the entries are not empty.
     it(`should not be empty for feeds`, (done) => {
+      let expect=chai.expect;
+      loadFeed(0,(result,status) => {
+        expect(status).to.be.equal("success");
+          return done();
+      });
       done();
     })
   })

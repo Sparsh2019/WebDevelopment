@@ -16,9 +16,12 @@ Other simpler effects provided by CSS are alignment and margin setting to increa
 
    - A test that ensures the menu element is hidden by default. (This test assures and checks the default case of the slide bar whether it is toggled or not. This is done by retrieving the className and id from index.html and comparing them to check the above mentioned case..)
 
+   -Test to check the entries are not empty.( Return success if the entries of loadfeed are not empty..)
+
 
 4. Technicality Improvements - 
 -. A separate open.html file constructed for toggling improvement.
 -. CSS alignment changes.
 -. The separate html file helps to align the slide bar and separate its effect from header which was interconnected initially.
 -. This enables them function independently.
+
