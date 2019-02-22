@@ -24,20 +24,26 @@ $(function () {
     it('are defined', function () {
       let expect = chai.expect;
       expect(allFeeds).to.not.be.undefined;
-      expect(allFeeds.length).to.be.above(0);
+      expect(allFeeds.length).to.be.equal(3);
     });
 
 
     // This test checks whether all the url field are defined and are not empty.
     it('should have defined Urls', function () {
       // Test here
-
+      let expect = chai.expect;
+        allFeeds.forEach((feed) => {
+          expect(feed.url).to.not.be.undefined;
+        });
     });
 
     // This test check whether all the feed names are defined and are not empty.
     it('should have defined names', function () {
       // Test here
-
+      let expect = chai.expect;
+        allFeeds.forEach((feed) => {
+          expect(feed.name).to.not.be.undefined;
+        });
     });
   });
 
@@ -48,22 +54,36 @@ $(function () {
     // Test to check node hidden by default.
     it('should be hidden by default', () => {
       // test here
+      let expect = chai.expect;
+      var css = $('.slide-menu').css('transform');
+     var values = css.match(/-?[\d\.]+/g);
+     for(var i=0;i<values.length;i++)
+     {
+       values[i]=Number(values[i]);
+      //  console.log(values[i]);
+     }
+     expect(values[4]).to.be.below(0);
     });
+   
     // A test that ensures the menu changes visibility when the menu icon is clicked. 
     // This test have two expectations: does the menu display itself when clicked, and does it hide when clicked again?
     it('should change visibility when the menu icon is clicked', (done) => {
+      let expect=chai.expect;
       done();
     });
 
   })
 
   describe('Initial Entries', () => {
-    let feedContainer, id;
 
     // Test to check the entries are not empty.
-    it(`should not be empty for feeds`, (done) => {
-      done();
-    })
+    it(`should not be empty for feed0`, (done) => {
+      let expect=chai.expect;
+      loadFeed(0,(result,status) => {
+        expect(status).to.be.equal("success");
+          return done();
+      });
+    });
   })
 
 
@@ -71,6 +91,7 @@ $(function () {
 
     // A test that ensures when a new feed is loaded by the loadFeed function that the content actually changes.
     it(`should change content for feeds`, (done) => {
+
       done();
     })
   })
