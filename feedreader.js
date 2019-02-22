@@ -24,7 +24,7 @@ $(function () {
     it('are defined', function () {
       let expect = chai.expect;
       expect(allFeeds).to.not.be.undefined;
-      expect(allFeeds.length).to.be.above(0);
+      expect(allFeeds.length).to.be.above(3);
     });
 
 
@@ -32,11 +32,21 @@ $(function () {
     it('should have defined Urls', function () {
       // Test here
 
+      let expect = chai.expect;
+        allFeeds.forEach((feeds) => {
+          expect(feeds.url).to.not.be.undefined;
+        });
+
     });
 
     // This test check whether all the feed names are defined and are not empty.
     it('should have defined names', function () {
       // Test here
+
+      let expect = chai.expect;
+        allFeeds.forEach((feeds) => {
+          expect(feeds.name).to.not.be.undefined;
+        });
 
     });
   });
@@ -62,6 +72,11 @@ $(function () {
 
     // Test to check the entries are not empty.
     it(`should not be empty for feeds`, (done) => {
+      let expect=chai.expect;
+      loadFeed(0,(result,status) => {
+        expect(status).to.be.equal("success");
+          return done();
+      });
       done();
     })
   })
