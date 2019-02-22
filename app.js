@@ -24,6 +24,7 @@ function init() {
  * which will be called after everything has run successfully.
  */
 function loadFeed(id, cb) {
+  var feedName = allFeeds[id].name;
   $.ajax({
     type: "GET",
     url: "https://api.rss2json.com/v1/api.json",
@@ -31,6 +32,24 @@ function loadFeed(id, cb) {
       rss_url: "http://feeds.feedburner.com/CssTricks"
     },
     success: function(result, status) {
+      var container = $(".feed"),
+        title = $(".header-title"),
+        entries = result.feed.entries,
+        // entriesLen = entries.length,
+        entryTemplate = Handlebars.compile($(".tpl-entry").html());
+
+      title.html(feedName); // Set the header text
+      container.empty(); // Empty out all previous entries
+
+      /* Loop through the entries we just loaded via the Google
+       * Feed Reader API. We'll then parse that entry against the
+       * entryTemplate (created above using Handlebars) and append
+       * the resulting HTML to the list of entries on the page.
+       */
+      entries.forEach(function(entry) {
+        container.append(entryTemplate(entry));
+      });
+
       if (cb) {
         cb(/*something*/);
       }
@@ -57,9 +76,9 @@ $(
       feedList.append(feedItemTemplate(feed));
     });
 
-    feedList.on("click", function() {
+    feedList.on("click", "a", function() {
       var item = $(this);
-      $("body").addClass(".feed");
+      $("body").addClass("menu-hidden");
       loadFeed(item.data("id"));
       return false;
     });
@@ -67,8 +86,8 @@ $(
     /* When the menu icon is clicked on, we need to toggle a class
      * on the body to perform the hiding/showing of our menu.
      */
-    menuIcon.click(function() {
-      $(".slide-menu").toggle("1000");
+    menuIcon.on("click", function() {
+      $("body").toggleClass("menu-hidden");
     });
   })()
 );
