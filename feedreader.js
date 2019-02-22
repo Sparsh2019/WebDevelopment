@@ -40,7 +40,6 @@ $(function () {
       let expect = chai.expect;
       expect(count_name).to.be.undefined;
       expect(count_name.length).to.equal(3);
-
     });
   });
 
@@ -50,7 +49,11 @@ $(function () {
 
     // Test to check node hidden by default.
     it('should be hidden by default', () => {
-      // test here
+      var index = $('.menu-icon-link');
+      $('.menu-icon-link').click(function() {
+          if(index===document.getElementById('index'))
+          alert('true');
+          console.log("Showing less..Hidden by Default")
     });
     // A test that ensures the menu changes visibility when the menu icon is clicked. 
     // This test have two expectations: does the menu display itself when clicked, and does it hide when clicked again?
