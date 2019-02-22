@@ -37,8 +37,9 @@ function loadFeed(id, cb) {
     },
     error: function (result, status, err) {
       //run only the callback without attempting to parse result due to error
-      if (cb) {
-        cb();
+      if (status) {
+        console.log(err);
+        $('.feed').append('<center>Something Went Wrong<center/>');
       }
     },
     dataType: "json"
@@ -58,7 +59,7 @@ $(function () {
 
   feedList.on('click', function () {
     var item = $(this);
-    $('body').addClass( /*A class here*/ );
+    $('body').addClass('.feed');
     loadFeed(item.data('id'));
     return false;
   });
