@@ -54,9 +54,10 @@ h2 {
 
 .slide-menu {
     position: absolute;
-    top: 3.5em;
+    top: 4.8em;
     padding: 1em;
-    background: #0984b4;
+    /* background: #0984b4; */
+    background: blueviolet;
     height: 100%;
     width: 10em;
     transform: translate3d(0, 0, 0);

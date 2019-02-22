@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>YourFeeds</title>
+
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="icomoon.css">
+        <link rel="stylesheet" href="style.css" content-type="text/css">
+        <!--Only for testing  <link href="https://unpkg.com/mocha@4.0.1/mocha.css" rel="stylesheet" /> -->
+
+    </head>
+    <body class="menu-hidden">
+            <div id='mocha'></div>
+            <div class="header">
+                <a href="index.html" class="menu-icon-link">
+                    <i class="icon-list">Show Less</i>
+                </a>
+                <div class="text-center">
+                <h1 class="header-title" aria-describedby="The heading of the present feed">Feeds</h1>
+                </div>
+            </div>
+    
+            <div class="slide-menu">
+                <ul class="feed-list"></ul>
+            </div>
+    
+            <div class="feed">
+                <a class="entry-link" href="https://css-tricks.com/the-magic-of-react-based-multi-step-forms/">
+                    <article class="entry" style="background-color:rgb(161, 194, 27)";>
+                        <h2 align="center">The Magic of React-Based Multi-Step Forms</h2>
+                        <p align="center">Nathan Sebhastian</p> 
+                    </article>
+                </a>
+            
+                <a class="entry-link" href="https://medium.com/@sachagreif/announcing-the-state-of-css-2019-survey-e1e4268df64d">
+                    <article class="entry" style="background-color:rgb(241, 190, 22)";>
+                        <h2 align="center">The #StateOfCSS 2019 Survey</h2>
+                        <p align="center">Geoff Graham</p> 
+                    </article>
+                </a>
+            
+                <a class="entry-link" href="https://css-tricks.com/getting-to-grips-with-the-airtable-api/">
+                    <article class="entry" style="background-color:rgb(161, 194, 27)";>
+                        <h2 align="center">Getting to Grips with the Airtable API</h2>
+                        <p align="center">Robin Rendle</p> 
+                    </article>
+                </a>
+            
+                <a class="entry-link" href="https://synd.co/2GemPNV">
+                    <article class="entry" style="background-color:rgb(241, 190, 22)";>
+                        <h2 align="center">Use monday.com to manage and share projects all in one place</h2>
+                        <p align="center">Geoff Graham</p> 
+                    </article>
+                </a>
+            
+                <a class="entry-link" href="https://css-tricks.com/the-smart-ways-to-correct-mistakes-in-git/">
+                    <article class="entry" style="background-color:rgb(161, 194, 27)";>
+                        <h2 align="center">The Smart Ways to Correct Mistakes in Git</h2>
+                        <p align="center">Tobias Günther</p> 
+                    </article>
+                </a>
+            
+                <a class="entry-link" href="https://cloudinary.com/blog/a_chaotic_good_guide_to_image_performance_part_1">
+                    <article class="entry" style="background-color:rgb(241, 190, 22)";>
+                        <h2 align="center">“the closest thing web standards have to a golden rule”</h2>
+                        <p align="center">Chris Coyier</p> 
+                    </article>
+                </a>
+            
+                <a class="entry-link" href="https://css-tricks.com/%e2%80%8b%e2%80%8bavoiding-those-dang-cannot-read-property-of-undefined-errors/">
+                    <article class="entry" style="background-color:rgb(161, 194, 27)";>
+                        <h2 align="center">​​Avoiding those dang cannot read property of undefined errors</h2>
+                        <p align="center">Adam Giese</p> 
+                    </article>
+                </a>
+            
+                <a class="entry-link" href="https://css-tricks.com/a-site-for-front-end-development-conferences-built-with-11ty-on-netlify/">
+                    <article class="entry" style="background-color:rgb(241, 190, 22)";>
+                        <h2 align="center">A Site for Front-End Development Conferences (Built with 11ty on Netlify)</h2>
+                        <p align="center">Chris Coyier</p> 
+                    </article>
+                </a>
+            
+                <a class="entry-link" href="https://css-tricks.com/quick-whats-the-difference-between-flexbox-and-grid/">
+                    <article class="entry" style="background-color:rgb(161, 194, 27)";>
+                        <h2 align="center">Quick! What’s the Difference Between Flexbox and Grid?</h2>
+                        <p align="center">Chris Coyier</p> 
+                    </article>
+                </a>
+            
+                <a class="entry-link" href="https://css-tricks.com/a-funny-thing-happened-on-the-way-to-the-javascript/">
+                    <article class="entry" style="background-color:rgb(241, 190, 22)";>
+                        <h2 align="center">A Funny Thing Happened on the Way to the JavaScript</h2>
+                        <p align="center">Jason Rodriguez</p> 
+                    </article>
+                </a>
+            </div>
+    
+            <script class="tpl-feed-list-item" type="text/x-handlebars-template">
+                <li>
+                    <a href="#" data-id="{{id}}">{{name}}</a>
+                </li>
+            </script>
+    
+            <script src="https://cdn.rawgit.com/jquery/jquery/2.1.4/dist/jquery.min.js"></script>
+            <script src="http://cdn.jsdelivr.net/handlebarsjs/2.0.0/handlebars.min.js"></script>
+            <script src="app.js"></script>
+            <script src="https://unpkg.com/chai@4.1.2/chai.js"></script>
+            <script src="https://unpkg.com/mocha@4.0.1/mocha.js"></script>
+            <script>mocha.setup('bdd')</script>
+            <script src="feedreader.js"></script>
+            <script>
+                mocha.checkLeaks();
+                mocha.run();
+            </script>
+    
+        </body>
+</html>

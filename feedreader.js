@@ -30,14 +30,16 @@ $(function () {
 
     // This test checks whether all the url field are defined and are not empty.
     it('should have defined Urls', function () {
-      // Test here
-
+      let expect = chai.expect;
+      expect(count_url).to.be.undefined;
+      expect(count_url.length).to.equal(3);
     });
 
     // This test check whether all the feed names are defined and are not empty.
     it('should have defined names', function () {
-      // Test here
-
+      let expect = chai.expect;
+      expect(count_name).to.be.undefined;
+      expect(count_name.length).to.equal(3);
     });
   });
 
@@ -47,7 +49,11 @@ $(function () {
 
     // Test to check node hidden by default.
     it('should be hidden by default', () => {
-      // test here
+      var index = $('.menu-icon-link');
+      $('.menu-icon-link').click(function() {
+          if(index===document.getElementById('index'))
+          alert('true');
+          console.log("Showing less..Hidden by Default")
     });
     // A test that ensures the menu changes visibility when the menu icon is clicked. 
     // This test have two expectations: does the menu display itself when clicked, and does it hide when clicked again?
@@ -62,6 +68,11 @@ $(function () {
 
     // Test to check the entries are not empty.
     it(`should not be empty for feeds`, (done) => {
+      let expect=chai.expect;
+      loadFeed(0,(result,status) => {
+        expect(status).to.be.equal("success");
+          return done();
+      });
       done();
     })
   })
